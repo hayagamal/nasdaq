@@ -1,41 +1,33 @@
 import useSWR from "swr";
-import { composePathAndParams } from "../utils/commons";
-import { useState } from "react";
 
-const API_KEY = "feKuZMPdKdNXpfPG7JKap6ZTy_Dnqo4q";
-
-const url = "https://api.polygon.io/v3/reference/tickers";
-
-export function useTickers() {
-  const [searchInput, setSearchInput] = useState("");
-  const params = {
-    apiKey: API_KEY,
-    limit: 8,
-    search: searchInput,
-  };
-  const fetchUrl = composePathAndParams(url, params);
-
+export function useTickers({ fetchUrl }: { fetchUrl: string }) {
   const fetchTickers = async () => {
     const response = await fetch(fetchUrl);
     if (response.ok) {
-      return response.json();
+      const json = await response.json();
+
+      return json;
     } else {
       if (response.status === 429) {
+        return Promise.reject({
+          message:
+            "Live Stocks retrieval failed due to too many requests. Please wait...",
+        });
       }
+      return Promise.reject({ message: "Failed to fetch tickers." });
     }
   };
 
-  const { data, error, isLoading, mutate } = useSWR(fetchUrl, fetchTickers, {
+  const { data, error, isLoading } = useSWR(fetchUrl, fetchTickers, {
     revalidateOnFocus: false,
+    revalidateIfStale: false,
     revalidateOnMount: true,
-    revalidateOnReconnect: true,
+    revalidateOnReconnect: false,
   });
 
   return {
     data,
     error,
     isLoading,
-    mutate,
-    setSearchTerm: setSearchInput,
   };
 }

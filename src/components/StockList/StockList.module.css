@@ -1,0 +1,12 @@
+.loadMore {
+  padding: 10px 5px;
+  background-color: var(--blue-1);
+  border: none;
+  width: 200px;
+  font-weight: bold;
+  margin: 20px 10px;
+  font-size: 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}

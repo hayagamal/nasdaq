@@ -1,0 +1,12 @@
+.splashImage {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.logo {
+  align-self: center;
+}
+.desc {
+  margin-bottom: 20px;
+}

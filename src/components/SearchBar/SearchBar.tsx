@@ -10,14 +10,13 @@ export function SearchBar({
   const handleSearchInputChange = useMemo(
     () =>
       debounce((event) => {
-        event.preventDefault();
         setSearchTerm(event.target.value);
       }, 500),
     [setSearchTerm]
   );
 
   return (
-    <form>
+    <form onSubmit={(event) => event?.preventDefault()}>
       <input
         className={styles["search"]}
         type="text"

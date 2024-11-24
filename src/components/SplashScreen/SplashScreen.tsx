@@ -1,24 +1,17 @@
+import styles from "./SplashScreen.module.css";
 export function SplashScreen() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        minHeight: "calc(100vh - 80px)",
-      }}
-    >
-      <div style={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
+    <div className="full-page">
+      <div className={styles["splashImage"]}>
         <img
           src="/images/logo_with_title.svg"
           alt="logo"
           width={400}
           height={120}
-          style={{ alignSelf: "center" }}
+          className={styles["logo"]}
         />
       </div>
-      <h1 style={{ marginBottom: "20px" }}>Haya Gamal</h1>
+      <h1 className={styles["desc"]}>Haya Gamal</h1>
     </div>
   );
 }

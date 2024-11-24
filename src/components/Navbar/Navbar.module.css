@@ -1,6 +1,6 @@
 .navbar {
   height: 70px;
-  background-color: #1d1d1d;
+  background-color: var(--dark-grey);
   padding: 5px 15px;
   display: flex;
   flex-direction: row;

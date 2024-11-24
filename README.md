@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Nasdaq Stocks Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application built with **React.js** and **TypeScript** that allows users to explore stocks listed on the **Nasdaq** exchange. Users can search for stocks by **ticker symbol** or **company name**, and load more stocks by clicking `Load more` button and they scroll through the data. The app uses **SWR** for caching and fetching stock data, **CSS** for styling, and **CSS variables** for a consistent design system. Additionally, **`useReducer`** is used to manage the application’s state, especially handling URL changes, setting search terms and cursor pagination.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Display Stocks**: View all stocks listed on the Nasdaq exchange, including their ticker symbol and company name.
+- **Search**: Search for stocks by **ticker symbol** or **company name**. The search feature triggers a backend search and filters the displayed stocks.
+- **Load More**: Users can click the **Load More** button to load additional stocks (pagination). This fetches the next set of stock data using cursor-based pagination.
+- **Caching**: The data is cached using **SWR** to minimize redundant network requests and improve performance.
+- **Responsive UI**: The user interface is styled with **CSS**, and **CSS variables** are used to ensure a consistent design system across the application.
+- **State Management**: **`useReducer`** is used to manage state changes, particularly handling URL changes from the `baseUrl` to `next_url` for cursor-based pagination.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **React.js**
+- **TypeScript**
+- **SWR**
+- **CSS**
+- **CSS Variables**
+- **JEST**
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup Instructions
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Node.js** (version 16 or above recommended)
+- **npm** or **yarn** as the package manager
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation Steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Clone the repository**:
+   ```bash
+   git clone git@github.com:hayagamal/nasdaq-thndr.git
+   cd my-app
+   npm run start
+   
