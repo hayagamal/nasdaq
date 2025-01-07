@@ -23,6 +23,7 @@ export function useTickers({ fetchUrl }: { fetchUrl: string }) {
     revalidateIfStale: false,
     revalidateOnMount: true,
     revalidateOnReconnect: false,
+    keepPreviousData: true,
   });
 
   return {
