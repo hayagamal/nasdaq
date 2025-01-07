@@ -35,7 +35,7 @@ This is a web application built with **React.js** and **TypeScript** that allows
 
 1. **Clone the repository**:
    ```bash
-   git clone git@github.com:hayagamal/nasdaq-thndr.git
+   git clone git@github.com:hayagamal/nasdaq.git
    cd my-app
    npm run start
    
